@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="kr.or.ddit.rb.cmm.vo.MemberVO" alias="memberVO"/>
+		<typeAlias alias="memVO" type="kr.or.ddit.rb.cmm.vo.MemberVO"/>
+		<typeAlias alias="addrVO" type="kr.or.ddit.rb.cmm.vo.AddrVO"/>
+		<typeAlias alias="bookGenreVO" type="kr.or.ddit.rb.cmm.vo.BookGenreVO"/>
+		<typeAlias alias="intrGreVO" type="kr.or.ddit.rb.cmm.vo.IntrGenreVO"/>
+		<typeAlias alias="mngVO" type="kr.or.ddit.rb.cmm.vo.ManagerVO"/>
+		<typeAlias alias="bookVO" type="kr.or.ddit.rb.cmm.vo.BookVO"/>
+		<typeAlias alias="ReviewVO" type="kr.or.ddit.rb.cmm.vo.ReviewVO"/>
+		<typeAlias alias="RvReplyVO" type="kr.or.ddit.rb.cmm.vo.RvReplyVO"/>
+		<typeAlias alias="BkVO" type="kr.or.ddit.rb.cmm.vo.BookVO"/>
+		<typeAlias alias="BkImgVO" type="kr.or.ddit.rb.cmm.vo.BookImgVO"/>
+		<typeAlias alias="BookVO" type="kr.or.ddit.rb.cmm.vo.BookVO"/>
+		<typeAlias alias="BookImgVO" type="kr.or.ddit.rb.cmm.vo.BookImgVO"/>
+		<typeAlias alias="NoticeVO" type="kr.or.ddit.rb.cmm.vo.NoticeVO"/>
+		<typeAlias alias="QueryVO" type="kr.or.ddit.rb.cmm.vo.QueryVO"/>
+		<typeAlias alias="QueryReplyVO" type="kr.or.ddit.rb.cmm.vo.QueryReplyVO"/>
+		<typeAlias alias="FaqVO" type="kr.or.ddit.rb.cmm.vo.FaqVO"/>
+		<typeAlias alias="orderVO" type="kr.or.ddit.rb.cmm.vo.OrderVO"/>
+	</typeAliases>
+
+	
+	<mappers>
+		<mapper resource="kr/or/ddit/rb/mapper/member.xml"/>
+		<mapper resource="kr/or/ddit/rb/mapper/managerLogin.xml"/>
+	</mappers>
+</configuration>
