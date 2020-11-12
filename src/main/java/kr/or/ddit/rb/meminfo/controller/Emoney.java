@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import kr.or.ddit.rb.cmm.vo.MemberVO;
 import kr.or.ddit.rb.meminfo.service.IMemInfoService;
 import kr.or.ddit.rb.meminfo.service.MemInfoServiceImpl;
@@ -17,6 +20,7 @@ import kr.or.ddit.rb.meminfo.service.MemInfoServiceImpl;
 @WebServlet("/eMoney")
 public class Emoney extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
