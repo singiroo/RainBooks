@@ -71,11 +71,16 @@ var addrSearch = function(addrKey){
 		type : 'get',
 		dataType : 'json',
 		success : function(res){
+			console.log(res)
 			code = "<table id='addrTab' border='1'><tr id='addrHead'><td>우편번호</td><td class='addrResult'>주소</td></tr>";
-			$.each(res, function(i, v){
+			
+			for(var i=0; i<res.list.length; i++){
+				var v = res.list[i];
+				console.log(v);
 				code+="<input type='hidden' id='addrSeq' name='addrSeq' value='"+v.addrSq+"'>";
-				code+=`<tr class='addrCont'><td>${v.addrZip}</td><td class='addrResult'>${v.addrSi} ${v.addrGugun} ${v.addrDong}</td></tr>`;
-			})
+				code+=`<tr class='addrCont'><td>${v.addrZip}</td><td class='addrResult'>${v.addrSido} ${v.addrGugun} ${v.addrDong}</td></tr>`;
+			}
+			
 			code += "</table>";
 			$('#addrResult').html(code);
 		},

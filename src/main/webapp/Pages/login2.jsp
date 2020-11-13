@@ -41,7 +41,7 @@ a{font-size:18px; NanumBarunGothicBold; font-weight:bold; ;}
 	      	<div id="inputResult">${msg }</div><br><br>
 	      	<div id="find_login">
 		     	<a id="find" href="<%= request.getContextPath() %>/Pages/searchMemInfo.jsp">아이디/비밀번호 찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		      	<a id="login" href="<%=request.getContextPath()%>/insertMember">회원가입</a>
+		      	<a id="login" href="<%=request.getContextPath()%>/insertMemberView">회원가입</a>
 	      	</div>
 		</form>
 	</div>

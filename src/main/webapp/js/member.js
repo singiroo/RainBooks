@@ -43,8 +43,11 @@ var searchAddr = function(addr1){
 		success : function(res){
 			code =	"<table border=1>";
 			code +=	"<tr><td>우편번호</td><td>주소</td><td>번지</td><td>시퀀스</td></tr>";
-			$.each(res,function(i,v){
-				code += "<tr class='ziptr'><td>"+v.zip+"</td><td>"+v.addr+"</td><td>"+v.bunji+"</td><td>"+v.sq+"</td></tr>";
+			$.each(res.addrList ,function(i,v){
+				code += `<tr class='ziptr'><td>${v.addrZip}</td>
+						 <td>${v.addrSido} ${v.addrGugun} ${v.addrDong}</td>
+						 <td>${v.addrBunji == null ? "" : v.addrBunji}</td>
+						 <td>${v.addrSq}</td></tr>`;
 			})
 			code+="</table>";
 			$('#addrResult').html(code);

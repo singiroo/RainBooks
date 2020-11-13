@@ -38,7 +38,7 @@ public interface IMemberDao {
 	 * @param igvo : 관심장르 vo (시퀀스 번호와 회원 아이디가 복합키가 되어 기본키로 쓰임)
 	 * @return 회원 관심장르가 등록되면 1이상 반환, 없으면 0
 	 */
-	public int insertIntrGenre(IntrGenreVO vo) ;
+	public int insertIntrGenre(List<IntrGenreVO> ivoList) ;
 	
 //	/**
 //	 * 회원 정보 삭제(탈퇴)

@@ -1,8 +1,7 @@
 <%@page import="kr.or.ddit.rb.cmm.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <% MemberVO member = (MemberVO)request.getAttribute("member"); %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,7 +18,7 @@ $(function(){
 	$('#refunding').on('click', function(){
 		$('#refundResult').empty();
 		refundAmt = parseInt($('#refundAmt').val());
-		if(refundAmt > parseInt("<%=member.geteMoney()%>")){
+		if(refundAmt > "${member.eMoney}"){
 			code = "<p>환불액이 보유하신 e-money보다 많습니다.</p>";
 			$('#refundResult').html(code);
 			$('#refundAmt').val(0);
@@ -83,10 +82,10 @@ $(function(){
 
 </head>
 <body>
-<h2><%=member.getMemNm() %>님의 E-MONEY 보유 현황</h2>
+<h2>${member.memNm}님의 E-MONEY 보유 현황</h2>
 <hr>
 <table id="emoneyTab"  align="left">
-<tr><td>현재 E-money : </td><td><%=member.geteMoney() %>원</td></tr>
+<tr><td>현재 E-money : </td><td>${member.eMoney} 원</td></tr>
 <tr><td colspan="2"><input type="button" id="charge" data-toggle="modal" data-target="#chargeModal" value="충전"><input type="button" id="refund" data-toggle="modal" data-target="#refundModal" value="환불"></td></tr>
 </table>
 

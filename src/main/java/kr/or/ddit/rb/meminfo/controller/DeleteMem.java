@@ -12,7 +12,6 @@ import kr.or.ddit.rb.meminfo.service.IMemInfoService;
 /**
  * Servlet implementation class DeleteMem
  */
-@WebServlet("/deleteMember")
 @Controller
 public class DeleteMem {
 	
@@ -25,7 +24,7 @@ public class DeleteMem {
 		String msg ="탈퇴 실패!!!";
 		boolean code = false;
 		
-		if(cnt > 0) {
+		if(cnt == 1) {
 			msg = "탈퇴가 완료되었습니다. 다음에 또 이용해주세요.";
 			code = true;
 		}

@@ -16,6 +16,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,10 +37,23 @@ public class UpdateInfo {
 	private IMemInfoService memInfoService;
 	
 	@RequestMapping(path = "/updateInfo", method = RequestMethod.POST)
-	public String updateInfo(MemberVO memberVo) {
+	public String updateInfo(MemberVO memberVo, Model model, HttpServletRequest request) {
 		logger.debug("updateInfo memId : {}", memberVo.getMemId());
 		logger.debug("updateInfo memId : {}", memberVo.getMemNm());
-		return "";
+		
+		int cnt = memInfoService.updateMemberVO(memberVo);
+		String url = request.getContextPath()+"/Pages/myPage.jsp"; 
+		boolean msg = false;
+		
+		if(cnt > 0) {
+			url = request.getContextPath()+"/memLogout";
+			msg = true;
+		}
+		
+		model.addAttribute("url", url);
+		model.addAttribute("msg", msg);
+		
+		return "jsonView";
 	}
     
     

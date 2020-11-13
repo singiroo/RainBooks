@@ -123,12 +123,25 @@
 	</insert>
 
 	<!-- 회원 관심장르등록 -->
-	<insert id="insertIntrGre" parameterType="intrGreVO">
+	<!-- <insert id="insertIntrGre" parameterType="intrGreVO">
+		INSERT INTO
+		INTR_GENRE(IN_GRE_SQ ,MEM_ID,BKGRE_CD) SELECT
+		NVL(MAX(IN_GRE_SQ),0)+1,#{memId},#{bkGreCd} FROM INTR_GENRE WHERE MEM_ID
+		= #{memId}
+	</insert> -->
+	<insert id="insertIntrGre" parameterType="java.util.List">
 		INSERT INTO
 		INTR_GENRE(IN_GRE_SQ ,MEM_ID,BKGRE_CD) SELECT
 		NVL(MAX(IN_GRE_SQ),0)+1,#{memId},#{bkGreCd} FROM INTR_GENRE WHERE MEM_ID
 		= #{memId}
 	</insert>
+	
+	
+	
+	
+	
+	
+	
 
 	<!-- ID 중복체크 -->
 	<select id="checkMemberId" resultMap="member">

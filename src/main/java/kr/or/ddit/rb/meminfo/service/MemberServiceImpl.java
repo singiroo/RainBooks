@@ -1,6 +1,7 @@
 package kr.or.ddit.rb.meminfo.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -18,8 +19,12 @@ public class MemberServiceImpl implements IMemberService {
 	private IMemberDao memberDao;
 
 	@Override
-	public int insertMemberInfo(MemberVO mvo)  {
-		return memberDao.insertMemberInfo(mvo);
+	public int insertMemberInfo(Map<String, Object> map)  {
+		MemberVO mvo = (MemberVO) map.get("member");
+		List<IntrGenreVO> ivoList = (List<IntrGenreVO>) map.get("ivoList");
+		int cnt = memberDao.insertIntrGenre(ivoList);
+		cnt = memberDao.insertMemberInfo(mvo);
+		return cnt;
 	}
 
 	@Override
@@ -34,7 +39,7 @@ public class MemberServiceImpl implements IMemberService {
 
 	@Override
 	public int insertIntrGenre(IntrGenreVO vo)  {
-		return memberDao.insertIntrGenre(vo);
+		return 0;
 	}
 
 	@Override

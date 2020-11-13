@@ -62,7 +62,7 @@ body{
 		<div class="nav_top">
 			<ul>
 				<li><a href="Pages/login2.jsp" ><span class="glyphicon glyphicon-log-in" ></span> 로그인</a></li>
-		        <li style="height:400%"><a href="/RainBooks/insertMember"><span class="glyphicon glyphicon-user"></span> 회원가입</a></li>
+		        <li style="height:400%"><a href="/RainBooks/insertMemberView"><span class="glyphicon glyphicon-user"></span> 회원가입</a></li>
 		        <li><a href="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-briefcase"></span> 관리자로그인</a></li>
 				<li><a href="Pages/notice.jsp"><span class="glyphicon glyphicon-bullhorn"></span> 공지사항</a></li>
 		        <li></li>

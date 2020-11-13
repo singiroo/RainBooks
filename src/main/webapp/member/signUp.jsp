@@ -132,6 +132,17 @@ $(function(){
 			}
 	})
 })
+
+initData = function(){
+	$('#memId').val("test001");
+	$('#memPass1').val("test1234");
+	$('#memPass2').val("test1234");
+	$('#memName').val("테스트");
+	$('#addr2').val("101동 1201호");
+	$('#memHp').val("010-1234-4567");
+	$('#memMail').val("aaa@amil.com");
+
+}
 </script>
 <style>
 #addrResult{

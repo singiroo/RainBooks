@@ -1,6 +1,7 @@
 package kr.or.ddit.rb.meminfo.service;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.or.ddit.rb.cmm.vo.AddrVO;
 import kr.or.ddit.rb.cmm.vo.IntrGenreVO;
@@ -13,7 +14,7 @@ public interface IMemberService {
 	 * @param mvo : 회원정보 vo
 	 * @return 회원 등록에 성공하면 1이상의 값 반환 실패하면 0
 	 */
-	public int insertMemberInfo(MemberVO mvo) ;
+	public int insertMemberInfo(Map<String, Object> map) ;
 	
 	/**
 	 * 회원등록을 할때 입력한 ID가 존재하는지 여부를 알아냄

@@ -37,8 +37,8 @@ public class MemberDaoImpl implements IMemberDao {
 	}
 
 	@Override
-	public int insertIntrGenre(IntrGenreVO vo)  {
-		return sqlSession.insert("mem.insertIntrGre",vo);
+	public int insertIntrGenre(List<IntrGenreVO> ivoList)  {
+		return sqlSession.insert("mem.insertIntrGre", ivoList);
 	}
 
 }
